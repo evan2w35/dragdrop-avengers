@@ -22,11 +22,10 @@ const data = {
     "hero-20": { id: "hero-20", name: "Drax The Destroyer" },
     "hero-21": { id: "hero-21", name: "Gamora" },
     "hero-22": { id: "hero-22", name: "Groot" },
-    "hero-23": { id: "hero-23", name: "Gamora" },
+    "hero-23": { id: "hero-23", name: "Maria Hill" },
     "hero-24": { id: "hero-24", name: "Thanos" },
     "hero-25": { id: "hero-25", name: "Star-Lord" },
-    "hero-26": { id: "hero-26", name: "Nick Fury" },
-    "hero-27": { id: "hero-27", name: "Maria Hill" }
+    "hero-26": { id: "hero-26", name: "Nick Fury" }
   },
   columns: {
     "column-1": {
@@ -58,8 +57,7 @@ const data = {
         "hero-23",
         "hero-24",
         "hero-25",
-        "hero-26",
-        "hero-27"
+        "hero-26"
       ]
     },
     "column-2": {

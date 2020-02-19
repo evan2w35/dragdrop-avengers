@@ -5,9 +5,7 @@ import "./Columns.css";
 
 export default function Column(props) {
   const mappedHeros = props.heroes.map((hero, index) => (
-    <div key={hero.id}>
-      <Hero key={hero.id} hero={hero} index={index} />
-    </div>
+    <Hero key={hero.id} hero={hero} index={index} />
   ));
   return (
     <span className="colContainer">
