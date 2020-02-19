@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
-      <h2 id="appTitle">Avengers Infinity War</h2>
+      <h2 id="appTitle">Avengers Movie Saga</h2>
       <div className="funContainer">
         <DragDropContext onDragEnd={onDragEnd}>
           {state.columnsort.map(columnId => {
