@@ -10,17 +10,17 @@ function App() {
 
   const onDragEnd = result => {
     const { destination, source, draggableId } = result;
-    const begin = state.columns[source.droppableId];
-    const end = state.columns[destination.droppableId];
     if (!destination) {
-      return;
+      return state;
     }
     if (
       destination.droppableId === source.droppableId &&
       destination.index === source.index
     ) {
-      return;
+      return state;
     }
+    const begin = state.columns[source.droppableId];
+    const end = state.columns[destination.droppableId];
     if (begin === end) {
       const newHeroIds = Array.from(begin.heroId);
       newHeroIds.splice(source.index, 1);
@@ -59,8 +59,8 @@ function App() {
           [newEnd.id]: newEnd
         }
       };
-      // console.log(newState);
       changeState(newState);
+      return;
     }
   };
 
