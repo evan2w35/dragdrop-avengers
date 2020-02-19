@@ -9,15 +9,13 @@ function App() {
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
-      <h2 id='appTitle'>
-        <text>Avengers Infinity War</text>
-      </h2>
+      <h2 id="appTitle">Avengers Infinity War</h2>
       <div className="funContainer">
         <DragDropContext>
           {data.columnsort.map(columnId => {
             const column = data.columns[columnId];
             const heroes = column.heroId.map(heroId => data.heroes[heroId]);
-            return <Column key={Column.id} column={column} heroes={heroes} />;
+            return <Column key={column.id} column={column} heroes={heroes} />;
           })}
         </DragDropContext>
       </div>

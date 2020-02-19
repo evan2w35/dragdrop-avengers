@@ -4,6 +4,12 @@ import { Droppable } from "react-beautiful-dnd";
 import "./Columns.css";
 
 export default function Column(props) {
+  const mappedHeros = props.heroes.map((hero, index) => (
+    <div key={hero.id}>
+      {console.log(hero)}
+      <Hero key={hero.id} hero={hero} index={index} />
+    </div>
+  ));
   return (
     <span className="colContainer">
       <h3 id="colTitle">{props.column.title}</h3>
@@ -12,12 +18,10 @@ export default function Column(props) {
           return (
             <div
               className="HeroList"
-              innerRef={provided.innerRef}
+              ref={provided.innerRef}
               {...provided.droppableProps}
             >
-              {props.heroes.map(hero => (
-                <Hero key={hero.id} hero={hero} />
-              ))}
+              {mappedHeros}
               {provided.placeholder}
             </div>
           );
