@@ -1,0 +1,19 @@
+.colContainer {
+  margin: 10px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
+
+#colTitle {
+  padding: 8px;
+  color: white;
+}
+
+.HeroList {
+  padding: 10px;
+  flex-grow: 1;
+  min-height: 100px;
+}
