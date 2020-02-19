@@ -10,6 +10,8 @@ function App() {
 
   const onDragEnd = result => {
     const { destination, source, draggableId } = result;
+    const begin = state.columns[source.droppableId];
+    const end = state.columns[destination.droppableId];
     if (!destination) {
       return;
     }
@@ -19,24 +21,47 @@ function App() {
     ) {
       return;
     }
-    const column = state.columns[source.droppableId];
-    const newHeroIds = Array.from(column.heroId);
-
-    newHeroIds.splice(source.index, 1);
-    newHeroIds.splice(destination.index, 0, draggableId);
-
-    const newColumn = {
-      ...column,
-      heroId: newHeroIds
-    };
-    const newState = {
-      ...state,
-      columns: {
-        ...state.columns,
-        [newColumn.id]: newColumn
-      }
-    };
-    changeState(newState);
+    if (begin === end) {
+      const newHeroIds = Array.from(begin.heroId);
+      newHeroIds.splice(source.index, 1);
+      newHeroIds.splice(destination.index, 0, draggableId);
+      const newColumn = {
+        ...begin,
+        heroId: newHeroIds
+      };
+      const newState = {
+        ...state,
+        columns: {
+          ...state.columns,
+          [newColumn.id]: newColumn
+        }
+      };
+      changeState(newState);
+      return;
+    } else {
+      const beginHeroIds = Array.from(begin.heroId);
+      beginHeroIds.splice(source.index, 1);
+      const newBegin = {
+        ...begin,
+        heroId: beginHeroIds
+      };
+      const endHeroIds = Array.from(end.heroId);
+      endHeroIds.splice(destination.index, 0, draggableId);
+      const newEnd = {
+        ...end,
+        heroId: endHeroIds
+      };
+      const newState = {
+        ...state,
+        columns: {
+          ...state.columns,
+          [newBegin.id]: newBegin,
+          [newEnd.id]: newEnd
+        }
+      };
+      // console.log(newState);
+      changeState(newState);
+    }
   };
 
   return (
