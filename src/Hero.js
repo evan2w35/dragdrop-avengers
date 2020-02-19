@@ -3,7 +3,6 @@ import { Draggable } from "react-beautiful-dnd";
 import "./Hero.css";
 
 export default function Hero(props) {
-  console.log("hero props: ", props);
   return (
     <Draggable draggableId={props.hero.id} index={props.index}>
       {provided => {

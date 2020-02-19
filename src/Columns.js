@@ -6,7 +6,6 @@ import "./Columns.css";
 export default function Column(props) {
   const mappedHeros = props.heroes.map((hero, index) => (
     <div key={hero.id}>
-      {console.log(hero)}
       <Hero key={hero.id} hero={hero} index={index} />
     </div>
   ));
