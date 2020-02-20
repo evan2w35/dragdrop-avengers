@@ -52,10 +52,10 @@ const data = {
         "hero-18",
         "hero-19",
         "hero-20",
-        "hero-21",
+        // "hero-21",
         "hero-22",
         "hero-23",
-        "hero-24",
+        // "hero-24",
         "hero-25",
         "hero-26"
       ]
@@ -68,7 +68,7 @@ const data = {
     "column-3": {
       id: "column-3",
       title: "Dead",
-      heroId: []
+      heroId: ["hero-21", "hero-24"]
     }
   },
   columnsort: ["column-1", "column-2", "column-3"]
