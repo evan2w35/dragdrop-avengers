@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
-import data from "./Data";
+import data from "./HeroData";
 import Column from "./Columns";
 import { DragDropContext } from "react-beautiful-dnd";
 import "./App.css";
